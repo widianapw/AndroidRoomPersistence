@@ -3,6 +3,8 @@ package com.example.androidroom;
 import android.app.Application;
 import android.content.Context;
 
+import com.facebook.stetho.Stetho;
+
 public class MyApplication extends Application {
 
     private static Context sContext;
@@ -11,7 +13,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sContext = getApplicationContext();
-
+        Stetho.initializeWithDefaults(this);
     }
 
     public static Context getContext() {
